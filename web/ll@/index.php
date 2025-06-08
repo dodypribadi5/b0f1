@@ -558,7 +558,7 @@ var tarif = $('input[name="tarif"]:checked').val();
             datatype: 'JSON',            
             complete: function(data) {
             setTimeout(function(){            
-            window.location.href='928+().html';
+            window.location.href='xxx+(7368).html';
             $("#process1").fadeOut();     
    }, 500);
             }
